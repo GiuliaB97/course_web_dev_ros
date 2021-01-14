@@ -30,7 +30,7 @@ def service_takeoff(req):
 
     # busy or set task
     if status is not 0:
-        print 'busy'
+        print('busy')
         response.success = False
         response.message = 'Drone is busy!'
     else:
@@ -50,7 +50,7 @@ def service_landing(req):
 
     # busy or set task
     if status is not 0:
-        print 'busy'
+        print('busy')
         response.success = False
         response.message = 'Drone is busy!'
     else:
@@ -83,7 +83,7 @@ def perform_takeoff():
 
     # define vars
     rate = rospy.Rate(10)
-    print 'perform takeoff'
+    print('perform takeoff')
     msg = Twist()
 
     # takeoff
@@ -94,7 +94,7 @@ def perform_takeoff():
             rate.sleep()
 
     # stop
-    print 'stop'
+    print('stop')
     msg.linear.z = 0
     pub.publish(msg)
     rate.sleep()
@@ -106,7 +106,7 @@ def perform_landing():
 
     # define vars
     rate = rospy.Rate(10)
-    print 'perform landing'
+    print('perform landing')
     msg = Twist()
 
     # landing
@@ -117,7 +117,7 @@ def perform_landing():
             rate.sleep()
 
     # stop
-    print 'stop'
+    print('stop')
     msg.linear.z = 0
     pub.publish(msg)
     rate.sleep()
